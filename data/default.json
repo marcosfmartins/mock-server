@@ -1,0 +1,9 @@
+{
+    "url": "/",
+    "method": "GET",
+    "response": {
+      "status": 200,
+      "headers": {},
+      "body": "<html><body><br/><h1 style=\"text-align: center\">Welcome to MOCK-SERVER </h1></body></html>"
+    }
+}
