@@ -1,16 +1,16 @@
-const express = require('express')
-const dataRepository = require('./repository/files')
-const routerService = require('./service/router')
+const express = require('express');
+const dataRepository = require('./repository/files');
+const routerService = require('./service/router');
 
 const NAME = 'Mock-Server';
 const PORT = process.env.SERVER_PORT || '8080';
 
 const app = express();
-app.set('name', NAME)
+app.set('name', NAME);
 app.disable('etag');
-app.disable('x-powered-by')
-app.use(function (req, res, next) {
-  res.header("X-powered-by", NAME);
+app.disable('x-powered-by');
+app.use((req, res, next) => {
+  res.header('X-powered-by', NAME);
   next();
 });
 
