@@ -1,21 +1,20 @@
-const express = require('express')
+const express = require('express');
 
 function handler(obj) {
   return (req, res) => {
     res.status = obj.status;
-    res.set(obj.headers)
-    res.send(obj.body)
-  }
+    res.set(obj.headers);
+    res.send(obj.body);
+  };
 }
 
 function makeRoute(objs) {
   const router = express.Router();
 
   objs.forEach((obj) => {
-
     switch (obj.method.toUpperCase()) {
       case 'GET':
-        router.get(obj.url,handler(obj.response));
+        router.get(obj.url, handler(obj.response));
         break;
       case 'POST':
         router.post(obj.url, handler(obj.response));
@@ -37,14 +36,13 @@ function makeRoute(objs) {
         break;
       default:
         router.all(obj.url, handler(obj.response));
-        break
+        break;
     }
+  });
 
-  })
-
-  return router
+  return router;
 }
 
 module.exports = {
-  makeRoute
-}
+  makeRoute,
+};

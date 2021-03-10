@@ -6,6 +6,8 @@ Mock-Server is a simple http server to mock endpoints.
 ## Usage
 
 ### Config file
+
+ - Object:
 ```json
 {
   "url": "/test/:id",
@@ -18,6 +20,23 @@ Mock-Server is a simple http server to mock endpoints.
     }
   }
 }
+```
+
+ - Array:
+```json
+[
+  {
+    "url": "/test/:id",
+    "method": "GET",
+    "response": {
+      "status": 200,
+      "headers": {},
+      "body": {
+        "test": 123
+      }
+    }
+  } 
+]
 ```
 
 ### Docker-compose
@@ -35,4 +54,4 @@ services:
 ```
 
 ## License
-[MIT](https://choosealicense.com/licenses/mit/)
+[MIT](LICENSE)
