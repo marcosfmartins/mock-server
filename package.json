@@ -1,8 +1,7 @@
 {
   "name": "mock-server",
-  "version": "1.0.0",
-  "description": "",
-  "main": "main.js",
+  "version": "1.0",
+  "main": "src/main.js",
   "scripts": {
     "start": "node src/main.js"
   },
